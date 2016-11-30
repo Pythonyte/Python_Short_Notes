@@ -1,0 +1,68 @@
+# get square of each number of a list:
+
+nums=[1,2,3,4,5]
+
+#Way1 using normal approach
+
+def square(nums):
+    result=[]
+    for num in nums:
+        result.append(num*num)
+    return result
+
+new_nums=square(nums)
+print("Way1 using normal approach",new_nums)
+
+#Way 2 Using List comprehension:
+
+new_nums = [num*num for num in nums]
+print("Way 2 Using List comprehension:",new_nums)
+
+
+# way 3 : using generator:
+def square2(nums):
+    for num in nums:
+        yield num*num
+
+new_nums1=square2(nums)
+print(new_nums1)
+#output will be like :
+#<generator object square2 at 0x00645360>
+# it will return a generator object rather than returning the whole list
+# reason because , it dont hold whole result in memory, it yeild one result at a time, means it waits for program to ask for another result
+
+#example like:
+print("Way3 : printing logic 1")
+print(next(new_nums1))
+print(next(new_nums1))
+print(next(new_nums1))
+print(next(new_nums1))
+print(next(new_nums1))
+
+# OR another way to print is:
+new_nums2=square2(nums)
+print("Way3 : printing logic 2")
+print(list(new_nums2))
+
+# OR another way to print is:
+new_nums3=square2(nums)
+print("Way3 : printing logic 3")
+for num in new_nums3:
+    print(num)
+
+
+
+# way 4 : using generator: Optimised one
+
+new_nums4=(num*num for num in nums)
+print(new_nums4)
+print("Way4 :")
+for num in new_nums4:
+    print(num)
+
+
+# conclusions:
+# generators are better in performances when it comes to very large list....
+# Memory usage: it takes no memory to store a new array  that means it is not taking any extra memory.
+# Time taken: it will not go for whole loop, it will check for one yeild set the concept and exit..
+# becoz it waits for user to ask for results.. so no extra time.....
