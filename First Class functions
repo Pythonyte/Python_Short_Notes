@@ -1,0 +1,64 @@
+'''
+
+Every function in python is first class, because they can be passed around like any other object.
+
+"First-Class Functions" (FCF) are functions which are treated as so called "First-Class Citizens" (FCC). FCC's in a programming language are objects (using the term "objects" very freely here) which:
+
+Can be used as parameters
+Can be used as a return value
+Can be assigned to variables
+Can be stored in data structures such as hash tables, lists, ...
+
+A first-class function is not a particular kind of function.
+All functions in Python are first-class functions.
+
+To say that functions are first-class in a certain programming language means that they can be passed around and manipulated similarly to how you would pass around and manipulate other kinds of objects (like integers or strings). You can assign a function to a variable, pass it as an argument to another function, etc. The distinction is not that individual functions can be first class or not, but that entire languages may treat functions as first-class objects, or may not.
+
+'''
+
+def square(num):
+    return num**2
+
+def cube(num):
+    return num**3
+
+# both of functions are first class functions , we can pass them as an object too..like
+sq=square
+# now both objects belongs to same functions...
+print(sq,square)
+print("sq=>{} & square=>{} are same".format(sq(5),square(5)))
+
+
+
+# we can use them by using inside other functions also : like (map)
+def my_map(fname,data):
+    result=[]
+    for val in data:
+        result.append(fname(val))
+    return result
+
+# here we are passing function name in my_map as an argument , which is called later in the body of my_map..
+print("square of [1,2,3,4,5] is : {}".format(my_map(square,[1,2,3,4,5])))
+print("cube of [1,2,3,4,5] is : {}".format(my_map(cube,[1,2,3,4,5])))
+
+
+
+
+#we can declare function inside function also ,..as they are just object:
+# function can return another funtion too...!!!
+def create_html(tag):
+    def put_text(text):
+        return "<{1}> {0} <\{1}>".format(text,tag)
+    return put_text
+
+#here crerate_html is returning the object i.e. another function named put_text: and once we will call put_text object then it will return teh actual output:
+
+head=create_html('h1')
+para=create_html('p')
+print(head('starts'))
+print(para('I am first class function !!'))
+print(head('ends'))
+
+# this approach is called closer...
+# These are the ways where we can use benifits of the using a  lang which have first class functions property.
+
