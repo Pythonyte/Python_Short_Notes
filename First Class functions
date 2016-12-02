@@ -2,7 +2,8 @@
 
 Every function in python is first class, because they can be passed around like any other object.
 
-"First-Class Functions" (FCF) are functions which are treated as so called "First-Class Citizens" (FCC). FCC's in a programming language are objects (using the term "objects" very freely here) which:
+"First-Class Functions" (FCF) are functions which are treated as so called "First-Class Citizens" (FCC). FCC's in a programming
+language are objects (using the term "objects" very freely here) which:
 
 Can be used as parameters
 Can be used as a return value
@@ -12,7 +13,11 @@ Can be stored in data structures such as hash tables, lists, ...
 A first-class function is not a particular kind of function.
 All functions in Python are first-class functions.
 
-To say that functions are first-class in a certain programming language means that they can be passed around and manipulated similarly to how you would pass around and manipulate other kinds of objects (like integers or strings). You can assign a function to a variable, pass it as an argument to another function, etc. The distinction is not that individual functions can be first class or not, but that entire languages may treat functions as first-class objects, or may not.
+To say that functions are first-class in a certain programming language means that they can be passed around and manipulated 
+similarly to how you would pass around and manipulate other kinds of objects (like integers or strings).
+You can assign a function to a variable, pass it as an argument to another function, etc.
+The distinction is not that individual functions can be first class or not, but that entire languages may treat 
+functions as first-class objects, or may not.
 
 '''
 
