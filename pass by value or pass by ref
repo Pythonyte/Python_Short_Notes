@@ -1,0 +1,36 @@
+
+
+def changeit(aa,word):
+    aa.append(4)
+    word='singhal'
+    print("{} \n {}".format(aa,word))
+
+array=[1,2,3]
+word='sumit'
+changeit(array,word)
+print("after fun \n {} \n {}".format(array,word))
+
+'''
+
+ANS:  it is "pass by value" but all values are just references to objects.
+
+
+Explaination:
+
+
+[1, 2, 3, 4]
+ singhal
+after fun
+ [1, 2, 3, 4]
+ sumit
+
+
+Output tells that:
+whenever we are passing the immutable things in fun and trying to change it,
+it creates a new instance and outside one will not change.
+
+BUT
+
+whenever we aee passing the mutable thing in fun and trying to change it , it will change on the same one, bcoz each and every thing is a object in python and mutable object are allowed to modify,
+So outsidr one will also get change (as its pointing the same one)
+'''
