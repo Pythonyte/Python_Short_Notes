@@ -1,5 +1,4 @@
 
-
 def changeit(aa,word):
     aa.append(4)
     word='singhal'
