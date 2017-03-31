@@ -1,0 +1,19 @@
+def take_one_value():
+    value=int(input().strip())
+    return value
+
+def take_space_sep_string():
+    valueArr = input().strip().split(' ')
+    #want to convert into int
+    valueArr = [int(i) for i in valueArr]
+    return valueArr
+
+def take_input_tll_user_prompts():
+    import sys
+    data=sys.stdin.readlines()
+    #want to sep it out space wise
+    #press ctrl+d to stop
+    data = [line.strip().split(' ') for line in data]
+    return data
+
+print(take_input_tll_user_prompts())
