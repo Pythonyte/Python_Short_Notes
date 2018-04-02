@@ -1,0 +1,47 @@
+# def xml_to_string(func):
+#     def wrapper(*args, **kwargs):
+#         xml = func(*args, **kwargs)
+#         return 'xml into string: {}'.format(xml)
+#     return wrapper
+#
+# def dict_to_xml(func):
+#     def wrapper(*args, **kwargs):
+#         dict_data = func(*args, **kwargs)
+#         xml = 2*dict_data
+#         return xml
+#     return wrapper
+
+
+class FormatConverter(object):
+    def __init__(self, function):
+        self.function = function
+
+    def __call__(self, *args, **kwargs):
+        result = self.function(*args, **kwargs)
+        return result
+
+class DictToXMLConverter(FormatConverter):
+    def __call__(self, *args, **kwargs):
+        result = super().__call__(*args, **kwargs)
+        # conversion logic from dict to xml
+        result = result + 'XML'
+        return result
+
+class XMLToStringConverter(FormatConverter):
+    def __call__(self, *args, **kwargs):
+        result = super().__call__(*args, **kwargs)
+        # conversion logic from dict to xml
+        result = result + 'String'
+        return result
+
+
+@XMLToStringConverter
+@DictToXMLConverter
+def instance_to_dict(instance):
+    # dict = 2*instance
+    return instance
+
+
+
+print(instance_to_dict('my dict'))
+
